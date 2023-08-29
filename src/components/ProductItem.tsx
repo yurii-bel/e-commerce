@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Product } from "../features/products/productsSlice";
 import { Button } from "@material-tailwind/react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import {
   addItemToCart,
   removeItemFromCart,
-  clearCart,
   reduceItemQuantityFromCart,
 } from "../features/cart/cartProductsSlice";
 import { RootState } from "../app/store";
