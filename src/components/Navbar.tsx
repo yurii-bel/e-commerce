@@ -11,6 +11,7 @@ const Navbar: React.FC = () => {
 
   // const dispatch = useAppDispatch();
   const cartItems = useAppSelector((state: RootState) => state.cart);
+  const totalItems = cartItems.reduce((acc, item) => item.quantity + acc, 0);
 
   return (
     <>
@@ -55,7 +56,7 @@ const Navbar: React.FC = () => {
           >
             <AiOutlineShoppingCart />
             <span className="absolute top-6 -right-1 text-center bg-red-500 text-white text-xs rounded-full w-4 h-4">
-              {cartItems.reduce((acc, item) => item.quantity + acc, 0)}
+              {totalItems}
             </span>
           </button>
         </div>
