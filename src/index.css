@@ -38,7 +38,3 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-blue-700;
 }
-
-.drawer-open {
-  @apply -translate-x-96 duration-200;
-}
