@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { RootState } from "../app/store";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 interface SummaryProps {
   isOpen: boolean;
@@ -7,6 +10,10 @@ interface SummaryProps {
 
 const Summary: React.FC<SummaryProps> = ({ isOpen, handleClose }) => {
   //   const [show, setShow] = useState(isOpen);
+  const dispatch = useAppDispatch();
+  const cartItems = useAppSelector((state: RootState) => state.cart);
+
+  const [totalSum, setTotalSum] = useState(0);
 
   const handleCloseDrawer = () => {
     handleClose();
@@ -49,8 +56,8 @@ const Summary: React.FC<SummaryProps> = ({ isOpen, handleClose }) => {
                   </svg>
                   <p className="text-sm pl-2 leading-none">Back</p>
                 </div>
-                <p className="text-5xl font-black leading-10 text-gray-800 pt-3">
-                  Bag
+                <p className="flex gap-2 text-5xl font-black leading-10 text-gray-800 pt-3">
+                  <AiOutlineShoppingCart /> My Cart
                 </p>
                 <div className="md:flex items-center mt-14 py-8 border-t border-gray-200">
                   <div className="w-1/4">
