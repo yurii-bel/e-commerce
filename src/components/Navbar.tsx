@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Summary from "./Summary";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { RootState } from "../app/store";
 
 const Navbar: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const toggleDrawer = () => setDrawerOpen((prev) => !prev);
+
+  // const dispatch = useAppDispatch();
+  const cartItems = useAppSelector((state: RootState) => state.cart);
 
   return (
     <>
@@ -50,7 +55,7 @@ const Navbar: React.FC = () => {
           >
             <AiOutlineShoppingCart />
             <span className="absolute top-6 -right-1 text-center bg-red-500 text-white text-xs rounded-full w-4 h-4">
-              7
+              {cartItems.reduce((acc, item) => item.quantity + acc, 0)}
             </span>
           </button>
         </div>
