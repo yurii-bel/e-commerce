@@ -30,7 +30,9 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
       price: product.price,
       category: product.category,
       thumbnail: product.thumbnail,
-      quantity: 0, // Set initial quantity to 1 when adding to cart
+      brand: product.brand,
+      rating: product.rating,
+      quantity: 0,
     };
 
     dispatch(addItemToCart(cartItemToAdd));
@@ -44,7 +46,9 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
       price: product.price,
       category: product.category,
       thumbnail: product.thumbnail,
-      quantity: 0, // Set initial quantity to 1 when adding to cart
+      brand: product.brand,
+      rating: product.rating,
+      quantity: 0,
     };
     dispatch(reduceItemQuantityFromCart(cartItemQuantityToReduce));
   };
@@ -54,17 +58,17 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
   };
 
   return (
-    <div className="flex flex-col border rounded-lg p-4 max-h-min shadow-md ">
+    <div className="bg-white flex flex-col border rounded-sm p-4 max-h-min shadow-md">
       <img
         src={product.thumbnail}
         alt={product.title}
-        className=" mb-4 max-w-[200px] object-contain aspect-square"
+        className="mb-4 max-w-[200px] object-contain aspect-square"
       />
       <div className="flex justify-between items-center bg-slate-50 p-1 rounded-md">
         <h2 className="text-lg font-semibold mb-2 text-slate-900">
           {product.title}
         </h2>
-        <p className="text-lg text-blue-500 font-semibold">
+        <p className="text-lg text-slate-900 font-semibold">
           {formatCurrency(product.price)}
         </p>
       </div>
@@ -73,11 +77,11 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
       <p className="text-gray-500 italic">{product.category}</p>
       <div className="mt-auto pt-4">
         {curItem && curItem.quantity > 0 ? (
-          <div className="flex justify-between items-center">
+          <div className="text-sm flex justify-between items-center">
             <div className="flex justify-evenly items-center w-[80%]">
               <button
                 onClick={() => handleReduceQuantity(product)}
-                className="w-1/4 bg-blue-700  rounded-md text-white"
+                className="w-1/4 bg-slate-700  rounded-md text-white hover:bg-slate-800 hover:text-slate-200"
               >
                 -
               </button>
@@ -86,14 +90,14 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
               </div>
               <button
                 onClick={() => handleAddToCart(product)}
-                className="w-1/4 bg-blue-700 rounded-md text-white"
+                className="w-1/4 bg-slate-700 rounded-md text-white hover:bg-slate-800 hover:text-slate-200"
               >
                 +
               </button>
             </div>
             <button
               onClick={() => handleRemoveFromCart(product.id)}
-              className="self-center bg-red-700 px-1 rounded-md text-white"
+              className="self-center bg-red-800 px-2 rounded-md text-white hover:bg-red-900 hover:text-slate-100"
             >
               Remove
             </button>
@@ -103,7 +107,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
             onClick={() => {
               handleAddToCart(product);
             }}
-            className="mt-4 bg-blue-700 rounded-md px-4 py-1 w-full"
+            className="mt-4 bg-slate-700 rounded-md px-4 py-1 w-full hover:bg-slate-800 hover:text-slate-200"
           >
             + Add to Cart
           </Button>

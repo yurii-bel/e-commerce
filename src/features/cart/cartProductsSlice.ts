@@ -7,6 +7,8 @@ export interface cartItem {
   price: number;
   category: string | null;
   thumbnail: string;
+  brand: string;
+  rating: number;
   quantity: number; // Add this field
 }
 

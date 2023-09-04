@@ -19,7 +19,7 @@
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track */
@@ -37,4 +37,8 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-blue-700;
+}
+
+body {
+  @apply font-custom;
 }
