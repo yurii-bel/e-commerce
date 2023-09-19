@@ -1,12 +1,13 @@
 import React from "react";
 import { Product } from "../features/products/productsSlice";
 import { Button } from "@material-tailwind/react";
-import { useAppDispatch } from "../app/hooks";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
 import {
   addItemToCart,
   removeItemFromCart,
   reduceItemQuantityFromCart,
 } from "../features/cart/cartProductsSlice";
+import { RootState } from "../app/store";
 import { cartItem } from "../features/cart/cartProductsSlice";
 import { formatCurrency } from "../utils/formatCurrency";
 
@@ -16,6 +17,7 @@ interface ProductItemProps {
 
 const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
   const dispatch = useAppDispatch();
+  const cartItems = useAppSelector((state: RootState) => state.cart);
 
   // Find the corresponding cart item based on product id
   const curItem = cartItems.find((item) => item.id === product.id);

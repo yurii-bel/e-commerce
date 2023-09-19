@@ -1,46 +1,75 @@
 {
   "hash": "7fb5266f",
+<<<<<<< HEAD
   "browserHash": "656a3663",
+=======
+  "browserHash": "ccf8a0d3",
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
   "optimized": {
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
+<<<<<<< HEAD
       "fileHash": "d76f3d35",
+=======
+      "fileHash": "dcf1ffdf",
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
       "needsInterop": true
     },
     "@material-tailwind/react": {
       "src": "../../node_modules/@material-tailwind/react/index.js",
       "file": "@material-tailwind_react.js",
+<<<<<<< HEAD
       "fileHash": "b909517a",
+=======
+      "fileHash": "fa76eb05",
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
       "needsInterop": true
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
+<<<<<<< HEAD
       "fileHash": "09d681e1",
+=======
+      "fileHash": "f7f2d1c8",
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
       "needsInterop": true
     },
     "@reduxjs/toolkit": {
       "src": "../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js",
       "file": "@reduxjs_toolkit.js",
+<<<<<<< HEAD
       "fileHash": "db52e86f",
+=======
+      "fileHash": "a859d5e9",
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
       "needsInterop": false
     },
     "@reduxjs/toolkit/query/react": {
       "src": "../../node_modules/@reduxjs/toolkit/dist/query/react/rtk-query-react.esm.js",
       "file": "@reduxjs_toolkit_query_react.js",
+<<<<<<< HEAD
       "fileHash": "8fd9b2c7",
+=======
+      "fileHash": "084dc138",
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
       "needsInterop": false
     },
     "react-router-dom": {
       "src": "../../node_modules/react-router-dom/dist/index.js",
       "file": "react-router-dom.js",
+<<<<<<< HEAD
       "fileHash": "0c7db403",
+=======
+      "fileHash": "134dfeff",
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
       "needsInterop": false
     },
     "react-icons/ai": {
       "src": "../../node_modules/react-icons/ai/index.esm.js",
       "file": "react-icons_ai.js",
+<<<<<<< HEAD
       "fileHash": "9cfa92b8",
       "needsInterop": false
     },
@@ -54,19 +83,30 @@
       "src": "../../node_modules/react-redux/es/index.js",
       "file": "react-redux.js",
       "fileHash": "d0b12013",
+=======
+      "fileHash": "03ac5273",
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
       "needsInterop": false
     }
   },
   "chunks": {
+<<<<<<< HEAD
     "chunk-M5VZZRNG": {
       "file": "chunk-M5VZZRNG.js"
+=======
+    "chunk-OTY6O57J": {
+      "file": "chunk-OTY6O57J.js"
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
     },
     "chunk-TN2CTJ7H": {
       "file": "chunk-TN2CTJ7H.js"
     },
+<<<<<<< HEAD
     "chunk-OTY6O57J": {
       "file": "chunk-OTY6O57J.js"
     },
+=======
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
     "chunk-2PA4WPI3": {
       "file": "chunk-2PA4WPI3.js"
     },

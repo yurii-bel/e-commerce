@@ -1,4 +1,5 @@
 import {
+<<<<<<< HEAD
   Provider_default,
   import_react_dom,
   shallowEqual,
@@ -6,6 +7,10 @@ import {
   useSelector,
   useStore
 } from "./chunk-M5VZZRNG.js";
+=======
+  require_react_dom
+} from "./chunk-OTY6O57J.js";
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
 import {
   SHOULD_AUTOBATCH,
   T,
@@ -33,14 +38,709 @@ import {
   r,
   t
 } from "./chunk-TN2CTJ7H.js";
+<<<<<<< HEAD
 import "./chunk-OTY6O57J.js";
+=======
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
 import {
   require_react
 } from "./chunk-2PA4WPI3.js";
 import {
+<<<<<<< HEAD
   __toESM
 } from "./chunk-ROME4SDB.js";
 
+=======
+  __commonJS,
+  __toESM
+} from "./chunk-ROME4SDB.js";
+
+// node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js
+var require_use_sync_external_store_shim_development = __commonJS({
+  "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js"(exports) {
+    "use strict";
+    if (true) {
+      (function() {
+        "use strict";
+        if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
+          __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
+        }
+        var React6 = require_react();
+        var ReactSharedInternals = React6.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        function error(format) {
+          {
+            {
+              for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+                args[_key2 - 1] = arguments[_key2];
+              }
+              printWarning("error", format, args);
+            }
+          }
+        }
+        function printWarning(level, format, args) {
+          {
+            var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
+            var stack = ReactDebugCurrentFrame.getStackAddendum();
+            if (stack !== "") {
+              format += "%s";
+              args = args.concat([stack]);
+            }
+            var argsWithFormat = args.map(function(item) {
+              return String(item);
+            });
+            argsWithFormat.unshift("Warning: " + format);
+            Function.prototype.apply.call(console[level], console, argsWithFormat);
+          }
+        }
+        function is2(x, y) {
+          return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
+        }
+        var objectIs = typeof Object.is === "function" ? Object.is : is2;
+        var useState2 = React6.useState, useEffect5 = React6.useEffect, useLayoutEffect3 = React6.useLayoutEffect, useDebugValue3 = React6.useDebugValue;
+        var didWarnOld18Alpha = false;
+        var didWarnUncachedGetSnapshot = false;
+        function useSyncExternalStore3(subscribe, getSnapshot, getServerSnapshot) {
+          {
+            if (!didWarnOld18Alpha) {
+              if (React6.startTransition !== void 0) {
+                didWarnOld18Alpha = true;
+                error("You are using an outdated, pre-release alpha of React 18 that does not support useSyncExternalStore. The use-sync-external-store shim will not work correctly. Upgrade to a newer pre-release.");
+              }
+            }
+          }
+          var value = getSnapshot();
+          {
+            if (!didWarnUncachedGetSnapshot) {
+              var cachedValue = getSnapshot();
+              if (!objectIs(value, cachedValue)) {
+                error("The result of getSnapshot should be cached to avoid an infinite loop");
+                didWarnUncachedGetSnapshot = true;
+              }
+            }
+          }
+          var _useState = useState2({
+            inst: {
+              value,
+              getSnapshot
+            }
+          }), inst = _useState[0].inst, forceUpdate = _useState[1];
+          useLayoutEffect3(function() {
+            inst.value = value;
+            inst.getSnapshot = getSnapshot;
+            if (checkIfSnapshotChanged(inst)) {
+              forceUpdate({
+                inst
+              });
+            }
+          }, [subscribe, value, getSnapshot]);
+          useEffect5(function() {
+            if (checkIfSnapshotChanged(inst)) {
+              forceUpdate({
+                inst
+              });
+            }
+            var handleStoreChange = function() {
+              if (checkIfSnapshotChanged(inst)) {
+                forceUpdate({
+                  inst
+                });
+              }
+            };
+            return subscribe(handleStoreChange);
+          }, [subscribe]);
+          useDebugValue3(value);
+          return value;
+        }
+        function checkIfSnapshotChanged(inst) {
+          var latestGetSnapshot = inst.getSnapshot;
+          var prevValue = inst.value;
+          try {
+            var nextValue = latestGetSnapshot();
+            return !objectIs(prevValue, nextValue);
+          } catch (error2) {
+            return true;
+          }
+        }
+        function useSyncExternalStore$1(subscribe, getSnapshot, getServerSnapshot) {
+          return getSnapshot();
+        }
+        var canUseDOM2 = !!(typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined");
+        var isServerEnvironment = !canUseDOM2;
+        var shim = isServerEnvironment ? useSyncExternalStore$1 : useSyncExternalStore3;
+        var useSyncExternalStore$2 = React6.useSyncExternalStore !== void 0 ? React6.useSyncExternalStore : shim;
+        exports.useSyncExternalStore = useSyncExternalStore$2;
+        if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") {
+          __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+        }
+      })();
+    }
+  }
+});
+
+// node_modules/use-sync-external-store/shim/index.js
+var require_shim = __commonJS({
+  "node_modules/use-sync-external-store/shim/index.js"(exports, module) {
+    "use strict";
+    if (false) {
+      module.exports = null;
+    } else {
+      module.exports = require_use_sync_external_store_shim_development();
+    }
+  }
+});
+
+// node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js
+var require_with_selector_development = __commonJS({
+  "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js"(exports) {
+    "use strict";
+    if (true) {
+      (function() {
+        "use strict";
+        if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
+          __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
+        }
+        var React6 = require_react();
+        var shim = require_shim();
+        function is2(x, y) {
+          return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
+        }
+        var objectIs = typeof Object.is === "function" ? Object.is : is2;
+        var useSyncExternalStore3 = shim.useSyncExternalStore;
+        var useRef5 = React6.useRef, useEffect5 = React6.useEffect, useMemo4 = React6.useMemo, useDebugValue3 = React6.useDebugValue;
+        function useSyncExternalStoreWithSelector3(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
+          var instRef = useRef5(null);
+          var inst;
+          if (instRef.current === null) {
+            inst = {
+              hasValue: false,
+              value: null
+            };
+            instRef.current = inst;
+          } else {
+            inst = instRef.current;
+          }
+          var _useMemo = useMemo4(function() {
+            var hasMemo = false;
+            var memoizedSnapshot;
+            var memoizedSelection;
+            var memoizedSelector = function(nextSnapshot) {
+              if (!hasMemo) {
+                hasMemo = true;
+                memoizedSnapshot = nextSnapshot;
+                var _nextSelection = selector(nextSnapshot);
+                if (isEqual !== void 0) {
+                  if (inst.hasValue) {
+                    var currentSelection = inst.value;
+                    if (isEqual(currentSelection, _nextSelection)) {
+                      memoizedSelection = currentSelection;
+                      return currentSelection;
+                    }
+                  }
+                }
+                memoizedSelection = _nextSelection;
+                return _nextSelection;
+              }
+              var prevSnapshot = memoizedSnapshot;
+              var prevSelection = memoizedSelection;
+              if (objectIs(prevSnapshot, nextSnapshot)) {
+                return prevSelection;
+              }
+              var nextSelection = selector(nextSnapshot);
+              if (isEqual !== void 0 && isEqual(prevSelection, nextSelection)) {
+                return prevSelection;
+              }
+              memoizedSnapshot = nextSnapshot;
+              memoizedSelection = nextSelection;
+              return nextSelection;
+            };
+            var maybeGetServerSnapshot = getServerSnapshot === void 0 ? null : getServerSnapshot;
+            var getSnapshotWithSelector = function() {
+              return memoizedSelector(getSnapshot());
+            };
+            var getServerSnapshotWithSelector = maybeGetServerSnapshot === null ? void 0 : function() {
+              return memoizedSelector(maybeGetServerSnapshot());
+            };
+            return [getSnapshotWithSelector, getServerSnapshotWithSelector];
+          }, [getSnapshot, getServerSnapshot, selector, isEqual]), getSelection = _useMemo[0], getServerSelection = _useMemo[1];
+          var value = useSyncExternalStore3(subscribe, getSelection, getServerSelection);
+          useEffect5(function() {
+            inst.hasValue = true;
+            inst.value = value;
+          }, [value]);
+          useDebugValue3(value);
+          return value;
+        }
+        exports.useSyncExternalStoreWithSelector = useSyncExternalStoreWithSelector3;
+        if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") {
+          __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+        }
+      })();
+    }
+  }
+});
+
+// node_modules/use-sync-external-store/shim/with-selector.js
+var require_with_selector = __commonJS({
+  "node_modules/use-sync-external-store/shim/with-selector.js"(exports, module) {
+    "use strict";
+    if (false) {
+      module.exports = null;
+    } else {
+      module.exports = require_with_selector_development();
+    }
+  }
+});
+
+// node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js
+var require_react_is_development = __commonJS({
+  "node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js"(exports) {
+    "use strict";
+    if (true) {
+      (function() {
+        "use strict";
+        var hasSymbol = typeof Symbol === "function" && Symbol.for;
+        var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 60103;
+        var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 60106;
+        var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 60107;
+        var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 60108;
+        var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 60114;
+        var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 60109;
+        var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 60110;
+        var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 60111;
+        var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 60111;
+        var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 60112;
+        var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 60113;
+        var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 60120;
+        var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 60115;
+        var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 60116;
+        var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 60121;
+        var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 60117;
+        var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 60118;
+        var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 60119;
+        function isValidElementType2(type) {
+          return typeof type === "string" || typeof type === "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+          type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+        }
+        function typeOf(object) {
+          if (typeof object === "object" && object !== null) {
+            var $$typeof = object.$$typeof;
+            switch ($$typeof) {
+              case REACT_ELEMENT_TYPE:
+                var type = object.type;
+                switch (type) {
+                  case REACT_ASYNC_MODE_TYPE:
+                  case REACT_CONCURRENT_MODE_TYPE:
+                  case REACT_FRAGMENT_TYPE:
+                  case REACT_PROFILER_TYPE:
+                  case REACT_STRICT_MODE_TYPE:
+                  case REACT_SUSPENSE_TYPE:
+                    return type;
+                  default:
+                    var $$typeofType = type && type.$$typeof;
+                    switch ($$typeofType) {
+                      case REACT_CONTEXT_TYPE:
+                      case REACT_FORWARD_REF_TYPE:
+                      case REACT_LAZY_TYPE:
+                      case REACT_MEMO_TYPE:
+                      case REACT_PROVIDER_TYPE:
+                        return $$typeofType;
+                      default:
+                        return $$typeof;
+                    }
+                }
+              case REACT_PORTAL_TYPE:
+                return $$typeof;
+            }
+          }
+          return void 0;
+        }
+        var AsyncMode = REACT_ASYNC_MODE_TYPE;
+        var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+        var ContextConsumer = REACT_CONTEXT_TYPE;
+        var ContextProvider = REACT_PROVIDER_TYPE;
+        var Element = REACT_ELEMENT_TYPE;
+        var ForwardRef = REACT_FORWARD_REF_TYPE;
+        var Fragment = REACT_FRAGMENT_TYPE;
+        var Lazy = REACT_LAZY_TYPE;
+        var Memo = REACT_MEMO_TYPE;
+        var Portal = REACT_PORTAL_TYPE;
+        var Profiler = REACT_PROFILER_TYPE;
+        var StrictMode = REACT_STRICT_MODE_TYPE;
+        var Suspense = REACT_SUSPENSE_TYPE;
+        var hasWarnedAboutDeprecatedIsAsyncMode = false;
+        function isAsyncMode(object) {
+          {
+            if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+              hasWarnedAboutDeprecatedIsAsyncMode = true;
+              console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
+            }
+          }
+          return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+        }
+        function isConcurrentMode(object) {
+          return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+        }
+        function isContextConsumer2(object) {
+          return typeOf(object) === REACT_CONTEXT_TYPE;
+        }
+        function isContextProvider(object) {
+          return typeOf(object) === REACT_PROVIDER_TYPE;
+        }
+        function isElement(object) {
+          return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+        }
+        function isForwardRef(object) {
+          return typeOf(object) === REACT_FORWARD_REF_TYPE;
+        }
+        function isFragment(object) {
+          return typeOf(object) === REACT_FRAGMENT_TYPE;
+        }
+        function isLazy(object) {
+          return typeOf(object) === REACT_LAZY_TYPE;
+        }
+        function isMemo(object) {
+          return typeOf(object) === REACT_MEMO_TYPE;
+        }
+        function isPortal(object) {
+          return typeOf(object) === REACT_PORTAL_TYPE;
+        }
+        function isProfiler(object) {
+          return typeOf(object) === REACT_PROFILER_TYPE;
+        }
+        function isStrictMode(object) {
+          return typeOf(object) === REACT_STRICT_MODE_TYPE;
+        }
+        function isSuspense(object) {
+          return typeOf(object) === REACT_SUSPENSE_TYPE;
+        }
+        exports.AsyncMode = AsyncMode;
+        exports.ConcurrentMode = ConcurrentMode;
+        exports.ContextConsumer = ContextConsumer;
+        exports.ContextProvider = ContextProvider;
+        exports.Element = Element;
+        exports.ForwardRef = ForwardRef;
+        exports.Fragment = Fragment;
+        exports.Lazy = Lazy;
+        exports.Memo = Memo;
+        exports.Portal = Portal;
+        exports.Profiler = Profiler;
+        exports.StrictMode = StrictMode;
+        exports.Suspense = Suspense;
+        exports.isAsyncMode = isAsyncMode;
+        exports.isConcurrentMode = isConcurrentMode;
+        exports.isContextConsumer = isContextConsumer2;
+        exports.isContextProvider = isContextProvider;
+        exports.isElement = isElement;
+        exports.isForwardRef = isForwardRef;
+        exports.isFragment = isFragment;
+        exports.isLazy = isLazy;
+        exports.isMemo = isMemo;
+        exports.isPortal = isPortal;
+        exports.isProfiler = isProfiler;
+        exports.isStrictMode = isStrictMode;
+        exports.isSuspense = isSuspense;
+        exports.isValidElementType = isValidElementType2;
+        exports.typeOf = typeOf;
+      })();
+    }
+  }
+});
+
+// node_modules/hoist-non-react-statics/node_modules/react-is/index.js
+var require_react_is = __commonJS({
+  "node_modules/hoist-non-react-statics/node_modules/react-is/index.js"(exports, module) {
+    "use strict";
+    if (false) {
+      module.exports = null;
+    } else {
+      module.exports = require_react_is_development();
+    }
+  }
+});
+
+// node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js
+var require_hoist_non_react_statics_cjs = __commonJS({
+  "node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js"(exports, module) {
+    "use strict";
+    var reactIs = require_react_is();
+    var REACT_STATICS = {
+      childContextTypes: true,
+      contextType: true,
+      contextTypes: true,
+      defaultProps: true,
+      displayName: true,
+      getDefaultProps: true,
+      getDerivedStateFromError: true,
+      getDerivedStateFromProps: true,
+      mixins: true,
+      propTypes: true,
+      type: true
+    };
+    var KNOWN_STATICS = {
+      name: true,
+      length: true,
+      prototype: true,
+      caller: true,
+      callee: true,
+      arguments: true,
+      arity: true
+    };
+    var FORWARD_REF_STATICS = {
+      "$$typeof": true,
+      render: true,
+      defaultProps: true,
+      displayName: true,
+      propTypes: true
+    };
+    var MEMO_STATICS = {
+      "$$typeof": true,
+      compare: true,
+      defaultProps: true,
+      displayName: true,
+      propTypes: true,
+      type: true
+    };
+    var TYPE_STATICS = {};
+    TYPE_STATICS[reactIs.ForwardRef] = FORWARD_REF_STATICS;
+    TYPE_STATICS[reactIs.Memo] = MEMO_STATICS;
+    function getStatics(component) {
+      if (reactIs.isMemo(component)) {
+        return MEMO_STATICS;
+      }
+      return TYPE_STATICS[component["$$typeof"]] || REACT_STATICS;
+    }
+    var defineProperty = Object.defineProperty;
+    var getOwnPropertyNames = Object.getOwnPropertyNames;
+    var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+    var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+    var getPrototypeOf = Object.getPrototypeOf;
+    var objectPrototype = Object.prototype;
+    function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
+      if (typeof sourceComponent !== "string") {
+        if (objectPrototype) {
+          var inheritedComponent = getPrototypeOf(sourceComponent);
+          if (inheritedComponent && inheritedComponent !== objectPrototype) {
+            hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
+          }
+        }
+        var keys = getOwnPropertyNames(sourceComponent);
+        if (getOwnPropertySymbols) {
+          keys = keys.concat(getOwnPropertySymbols(sourceComponent));
+        }
+        var targetStatics = getStatics(targetComponent);
+        var sourceStatics = getStatics(sourceComponent);
+        for (var i = 0; i < keys.length; ++i) {
+          var key = keys[i];
+          if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {
+            var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
+            try {
+              defineProperty(targetComponent, key, descriptor);
+            } catch (e2) {
+            }
+          }
+        }
+      }
+      return targetComponent;
+    }
+    module.exports = hoistNonReactStatics;
+  }
+});
+
+// node_modules/react-is/cjs/react-is.development.js
+var require_react_is_development2 = __commonJS({
+  "node_modules/react-is/cjs/react-is.development.js"(exports) {
+    "use strict";
+    if (true) {
+      (function() {
+        "use strict";
+        var REACT_ELEMENT_TYPE = Symbol.for("react.element");
+        var REACT_PORTAL_TYPE = Symbol.for("react.portal");
+        var REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
+        var REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode");
+        var REACT_PROFILER_TYPE = Symbol.for("react.profiler");
+        var REACT_PROVIDER_TYPE = Symbol.for("react.provider");
+        var REACT_CONTEXT_TYPE = Symbol.for("react.context");
+        var REACT_SERVER_CONTEXT_TYPE = Symbol.for("react.server_context");
+        var REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref");
+        var REACT_SUSPENSE_TYPE = Symbol.for("react.suspense");
+        var REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list");
+        var REACT_MEMO_TYPE = Symbol.for("react.memo");
+        var REACT_LAZY_TYPE = Symbol.for("react.lazy");
+        var REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen");
+        var enableScopeAPI = false;
+        var enableCacheElement = false;
+        var enableTransitionTracing = false;
+        var enableLegacyHidden = false;
+        var enableDebugTracing = false;
+        var REACT_MODULE_REFERENCE;
+        {
+          REACT_MODULE_REFERENCE = Symbol.for("react.module.reference");
+        }
+        function isValidElementType2(type) {
+          if (typeof type === "string" || typeof type === "function") {
+            return true;
+          }
+          if (type === REACT_FRAGMENT_TYPE || type === REACT_PROFILER_TYPE || enableDebugTracing || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || enableLegacyHidden || type === REACT_OFFSCREEN_TYPE || enableScopeAPI || enableCacheElement || enableTransitionTracing) {
+            return true;
+          }
+          if (typeof type === "object" && type !== null) {
+            if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || // This needs to include all possible module reference object
+            // types supported by any Flight configuration anywhere since
+            // we don't know which Flight build this will end up being used
+            // with.
+            type.$$typeof === REACT_MODULE_REFERENCE || type.getModuleId !== void 0) {
+              return true;
+            }
+          }
+          return false;
+        }
+        function typeOf(object) {
+          if (typeof object === "object" && object !== null) {
+            var $$typeof = object.$$typeof;
+            switch ($$typeof) {
+              case REACT_ELEMENT_TYPE:
+                var type = object.type;
+                switch (type) {
+                  case REACT_FRAGMENT_TYPE:
+                  case REACT_PROFILER_TYPE:
+                  case REACT_STRICT_MODE_TYPE:
+                  case REACT_SUSPENSE_TYPE:
+                  case REACT_SUSPENSE_LIST_TYPE:
+                    return type;
+                  default:
+                    var $$typeofType = type && type.$$typeof;
+                    switch ($$typeofType) {
+                      case REACT_SERVER_CONTEXT_TYPE:
+                      case REACT_CONTEXT_TYPE:
+                      case REACT_FORWARD_REF_TYPE:
+                      case REACT_LAZY_TYPE:
+                      case REACT_MEMO_TYPE:
+                      case REACT_PROVIDER_TYPE:
+                        return $$typeofType;
+                      default:
+                        return $$typeof;
+                    }
+                }
+              case REACT_PORTAL_TYPE:
+                return $$typeof;
+            }
+          }
+          return void 0;
+        }
+        var ContextConsumer = REACT_CONTEXT_TYPE;
+        var ContextProvider = REACT_PROVIDER_TYPE;
+        var Element = REACT_ELEMENT_TYPE;
+        var ForwardRef = REACT_FORWARD_REF_TYPE;
+        var Fragment = REACT_FRAGMENT_TYPE;
+        var Lazy = REACT_LAZY_TYPE;
+        var Memo = REACT_MEMO_TYPE;
+        var Portal = REACT_PORTAL_TYPE;
+        var Profiler = REACT_PROFILER_TYPE;
+        var StrictMode = REACT_STRICT_MODE_TYPE;
+        var Suspense = REACT_SUSPENSE_TYPE;
+        var SuspenseList = REACT_SUSPENSE_LIST_TYPE;
+        var hasWarnedAboutDeprecatedIsAsyncMode = false;
+        var hasWarnedAboutDeprecatedIsConcurrentMode = false;
+        function isAsyncMode(object) {
+          {
+            if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+              hasWarnedAboutDeprecatedIsAsyncMode = true;
+              console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 18+.");
+            }
+          }
+          return false;
+        }
+        function isConcurrentMode(object) {
+          {
+            if (!hasWarnedAboutDeprecatedIsConcurrentMode) {
+              hasWarnedAboutDeprecatedIsConcurrentMode = true;
+              console["warn"]("The ReactIs.isConcurrentMode() alias has been deprecated, and will be removed in React 18+.");
+            }
+          }
+          return false;
+        }
+        function isContextConsumer2(object) {
+          return typeOf(object) === REACT_CONTEXT_TYPE;
+        }
+        function isContextProvider(object) {
+          return typeOf(object) === REACT_PROVIDER_TYPE;
+        }
+        function isElement(object) {
+          return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+        }
+        function isForwardRef(object) {
+          return typeOf(object) === REACT_FORWARD_REF_TYPE;
+        }
+        function isFragment(object) {
+          return typeOf(object) === REACT_FRAGMENT_TYPE;
+        }
+        function isLazy(object) {
+          return typeOf(object) === REACT_LAZY_TYPE;
+        }
+        function isMemo(object) {
+          return typeOf(object) === REACT_MEMO_TYPE;
+        }
+        function isPortal(object) {
+          return typeOf(object) === REACT_PORTAL_TYPE;
+        }
+        function isProfiler(object) {
+          return typeOf(object) === REACT_PROFILER_TYPE;
+        }
+        function isStrictMode(object) {
+          return typeOf(object) === REACT_STRICT_MODE_TYPE;
+        }
+        function isSuspense(object) {
+          return typeOf(object) === REACT_SUSPENSE_TYPE;
+        }
+        function isSuspenseList(object) {
+          return typeOf(object) === REACT_SUSPENSE_LIST_TYPE;
+        }
+        exports.ContextConsumer = ContextConsumer;
+        exports.ContextProvider = ContextProvider;
+        exports.Element = Element;
+        exports.ForwardRef = ForwardRef;
+        exports.Fragment = Fragment;
+        exports.Lazy = Lazy;
+        exports.Memo = Memo;
+        exports.Portal = Portal;
+        exports.Profiler = Profiler;
+        exports.StrictMode = StrictMode;
+        exports.Suspense = Suspense;
+        exports.SuspenseList = SuspenseList;
+        exports.isAsyncMode = isAsyncMode;
+        exports.isConcurrentMode = isConcurrentMode;
+        exports.isContextConsumer = isContextConsumer2;
+        exports.isContextProvider = isContextProvider;
+        exports.isElement = isElement;
+        exports.isForwardRef = isForwardRef;
+        exports.isFragment = isFragment;
+        exports.isLazy = isLazy;
+        exports.isMemo = isMemo;
+        exports.isPortal = isPortal;
+        exports.isProfiler = isProfiler;
+        exports.isStrictMode = isStrictMode;
+        exports.isSuspense = isSuspense;
+        exports.isSuspenseList = isSuspenseList;
+        exports.isValidElementType = isValidElementType2;
+        exports.typeOf = typeOf;
+      })();
+    }
+  }
+});
+
+// node_modules/react-is/index.js
+var require_react_is2 = __commonJS({
+  "node_modules/react-is/index.js"(exports, module) {
+    "use strict";
+    if (false) {
+      module.exports = null;
+    } else {
+      module.exports = require_react_is_development2();
+    }
+  }
+});
+
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
 // node_modules/@reduxjs/toolkit/dist/query/rtk-query.esm.js
 var __generator = function(thisArg, body) {
   var _ = { label: 0, sent: function() {
@@ -2359,11 +3059,379 @@ var coreModule = function() {
 var createApi = buildCreateApi(coreModule());
 
 // node_modules/@reduxjs/toolkit/dist/query/react/rtk-query-react.esm.js
+<<<<<<< HEAD
 var import_react = __toESM(require_react());
 var import_react2 = __toESM(require_react());
 var import_react3 = __toESM(require_react());
 var import_react4 = __toESM(require_react());
 var import_react5 = __toESM(require_react());
+=======
+var import_react3 = __toESM(require_react());
+
+// node_modules/react-redux/es/index.js
+var import_shim = __toESM(require_shim());
+var import_with_selector = __toESM(require_with_selector());
+
+// node_modules/react-redux/es/utils/reactBatchedUpdates.js
+var import_react_dom = __toESM(require_react_dom());
+
+// node_modules/react-redux/es/utils/batch.js
+function defaultNoopBatch(callback) {
+  callback();
+}
+var batch = defaultNoopBatch;
+var setBatch = (newBatch) => batch = newBatch;
+var getBatch = () => batch;
+
+// node_modules/react-redux/es/hooks/useSelector.js
+var import_react2 = __toESM(require_react());
+
+// node_modules/react-redux/es/hooks/useReduxContext.js
+var import_react = __toESM(require_react());
+
+// node_modules/react-redux/es/components/Context.js
+var React = __toESM(require_react());
+var ContextKey = Symbol.for(`react-redux-context`);
+var gT = typeof globalThis !== "undefined" ? globalThis : (
+  /* fall back to a per-module scope (pre-8.1 behaviour) if `globalThis` is not available */
+  {}
+);
+function getContext() {
+  var _gT$ContextKey;
+  if (!React.createContext)
+    return {};
+  const contextMap = (_gT$ContextKey = gT[ContextKey]) != null ? _gT$ContextKey : gT[ContextKey] = /* @__PURE__ */ new Map();
+  let realContext = contextMap.get(React.createContext);
+  if (!realContext) {
+    realContext = React.createContext(null);
+    if (true) {
+      realContext.displayName = "ReactRedux";
+    }
+    contextMap.set(React.createContext, realContext);
+  }
+  return realContext;
+}
+var ReactReduxContext = getContext();
+
+// node_modules/react-redux/es/hooks/useReduxContext.js
+function createReduxContextHook(context = ReactReduxContext) {
+  return function useReduxContext2() {
+    const contextValue = (0, import_react.useContext)(context);
+    if (!contextValue) {
+      throw new Error("could not find react-redux context value; please ensure the component is wrapped in a <Provider>");
+    }
+    return contextValue;
+  };
+}
+var useReduxContext = createReduxContextHook();
+
+// node_modules/react-redux/es/utils/useSyncExternalStore.js
+var notInitialized = () => {
+  throw new Error("uSES not initialized!");
+};
+
+// node_modules/react-redux/es/hooks/useSelector.js
+var useSyncExternalStoreWithSelector = notInitialized;
+var initializeUseSelector = (fn) => {
+  useSyncExternalStoreWithSelector = fn;
+};
+var refEquality = (a, b) => a === b;
+function createSelectorHook(context = ReactReduxContext) {
+  const useReduxContext2 = context === ReactReduxContext ? useReduxContext : createReduxContextHook(context);
+  return function useSelector2(selector, equalityFnOrOptions = {}) {
+    const {
+      equalityFn = refEquality,
+      stabilityCheck = void 0,
+      noopCheck = void 0
+    } = typeof equalityFnOrOptions === "function" ? {
+      equalityFn: equalityFnOrOptions
+    } : equalityFnOrOptions;
+    if (true) {
+      if (!selector) {
+        throw new Error(`You must pass a selector to useSelector`);
+      }
+      if (typeof selector !== "function") {
+        throw new Error(`You must pass a function as a selector to useSelector`);
+      }
+      if (typeof equalityFn !== "function") {
+        throw new Error(`You must pass a function as an equality function to useSelector`);
+      }
+    }
+    const {
+      store,
+      subscription,
+      getServerState,
+      stabilityCheck: globalStabilityCheck,
+      noopCheck: globalNoopCheck
+    } = useReduxContext2();
+    const firstRun = (0, import_react2.useRef)(true);
+    const wrappedSelector = (0, import_react2.useCallback)({
+      [selector.name](state) {
+        const selected = selector(state);
+        if (true) {
+          const finalStabilityCheck = typeof stabilityCheck === "undefined" ? globalStabilityCheck : stabilityCheck;
+          if (finalStabilityCheck === "always" || finalStabilityCheck === "once" && firstRun.current) {
+            const toCompare = selector(state);
+            if (!equalityFn(selected, toCompare)) {
+              console.warn("Selector " + (selector.name || "unknown") + " returned a different result when called with the same parameters. This can lead to unnecessary rerenders.\nSelectors that return a new reference (such as an object or an array) should be memoized: https://redux.js.org/usage/deriving-data-selectors#optimizing-selectors-with-memoization", {
+                state,
+                selected,
+                selected2: toCompare
+              });
+            }
+          }
+          const finalNoopCheck = typeof noopCheck === "undefined" ? globalNoopCheck : noopCheck;
+          if (finalNoopCheck === "always" || finalNoopCheck === "once" && firstRun.current) {
+            if (selected === state) {
+              console.warn("Selector " + (selector.name || "unknown") + " returned the root state when called. This can lead to unnecessary rerenders.\nSelectors that return the entire state are almost certainly a mistake, as they will cause a rerender whenever *anything* in state changes.");
+            }
+          }
+          if (firstRun.current)
+            firstRun.current = false;
+        }
+        return selected;
+      }
+    }[selector.name], [selector, globalStabilityCheck, stabilityCheck]);
+    const selectedState = useSyncExternalStoreWithSelector(subscription.addNestedSub, store.getState, getServerState || store.getState, wrappedSelector, equalityFn);
+    (0, import_react2.useDebugValue)(selectedState);
+    return selectedState;
+  };
+}
+var useSelector = createSelectorHook();
+
+// node_modules/react-redux/es/components/connect.js
+var import_hoist_non_react_statics = __toESM(require_hoist_non_react_statics_cjs());
+var React3 = __toESM(require_react());
+var import_react_is = __toESM(require_react_is2());
+
+// node_modules/react-redux/es/utils/Subscription.js
+function createListenerCollection() {
+  const batch2 = getBatch();
+  let first = null;
+  let last = null;
+  return {
+    clear() {
+      first = null;
+      last = null;
+    },
+    notify() {
+      batch2(() => {
+        let listener = first;
+        while (listener) {
+          listener.callback();
+          listener = listener.next;
+        }
+      });
+    },
+    get() {
+      let listeners = [];
+      let listener = first;
+      while (listener) {
+        listeners.push(listener);
+        listener = listener.next;
+      }
+      return listeners;
+    },
+    subscribe(callback) {
+      let isSubscribed = true;
+      let listener = last = {
+        callback,
+        next: null,
+        prev: last
+      };
+      if (listener.prev) {
+        listener.prev.next = listener;
+      } else {
+        first = listener;
+      }
+      return function unsubscribe() {
+        if (!isSubscribed || first === null)
+          return;
+        isSubscribed = false;
+        if (listener.next) {
+          listener.next.prev = listener.prev;
+        } else {
+          last = listener.prev;
+        }
+        if (listener.prev) {
+          listener.prev.next = listener.next;
+        } else {
+          first = listener.next;
+        }
+      };
+    }
+  };
+}
+var nullListeners = {
+  notify() {
+  },
+  get: () => []
+};
+function createSubscription(store, parentSub) {
+  let unsubscribe;
+  let listeners = nullListeners;
+  function addNestedSub(listener) {
+    trySubscribe();
+    return listeners.subscribe(listener);
+  }
+  function notifyNestedSubs() {
+    listeners.notify();
+  }
+  function handleChangeWrapper() {
+    if (subscription.onStateChange) {
+      subscription.onStateChange();
+    }
+  }
+  function isSubscribed() {
+    return Boolean(unsubscribe);
+  }
+  function trySubscribe() {
+    if (!unsubscribe) {
+      unsubscribe = parentSub ? parentSub.addNestedSub(handleChangeWrapper) : store.subscribe(handleChangeWrapper);
+      listeners = createListenerCollection();
+    }
+  }
+  function tryUnsubscribe() {
+    if (unsubscribe) {
+      unsubscribe();
+      unsubscribe = void 0;
+      listeners.clear();
+      listeners = nullListeners;
+    }
+  }
+  const subscription = {
+    addNestedSub,
+    notifyNestedSubs,
+    handleChangeWrapper,
+    isSubscribed,
+    trySubscribe,
+    tryUnsubscribe,
+    getListeners: () => listeners
+  };
+  return subscription;
+}
+
+// node_modules/react-redux/es/utils/useIsomorphicLayoutEffect.js
+var React2 = __toESM(require_react());
+var canUseDOM = !!(typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined");
+var useIsomorphicLayoutEffect = canUseDOM ? React2.useLayoutEffect : React2.useEffect;
+
+// node_modules/react-redux/es/utils/shallowEqual.js
+function is(x, y) {
+  if (x === y) {
+    return x !== 0 || y !== 0 || 1 / x === 1 / y;
+  } else {
+    return x !== x && y !== y;
+  }
+}
+function shallowEqual(objA, objB) {
+  if (is(objA, objB))
+    return true;
+  if (typeof objA !== "object" || objA === null || typeof objB !== "object" || objB === null) {
+    return false;
+  }
+  const keysA = Object.keys(objA);
+  const keysB = Object.keys(objB);
+  if (keysA.length !== keysB.length)
+    return false;
+  for (let i = 0; i < keysA.length; i++) {
+    if (!Object.prototype.hasOwnProperty.call(objB, keysA[i]) || !is(objA[keysA[i]], objB[keysA[i]])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// node_modules/react-redux/es/components/connect.js
+var useSyncExternalStore = notInitialized;
+var initializeConnect = (fn) => {
+  useSyncExternalStore = fn;
+};
+
+// node_modules/react-redux/es/components/Provider.js
+var React4 = __toESM(require_react());
+function Provider({
+  store,
+  context,
+  children,
+  serverState,
+  stabilityCheck = "once",
+  noopCheck = "once"
+}) {
+  const contextValue = React4.useMemo(() => {
+    const subscription = createSubscription(store);
+    return {
+      store,
+      subscription,
+      getServerState: serverState ? () => serverState : void 0,
+      stabilityCheck,
+      noopCheck
+    };
+  }, [store, serverState, stabilityCheck, noopCheck]);
+  const previousState = React4.useMemo(() => store.getState(), [store]);
+  useIsomorphicLayoutEffect(() => {
+    const {
+      subscription
+    } = contextValue;
+    subscription.onStateChange = subscription.notifyNestedSubs;
+    subscription.trySubscribe();
+    if (previousState !== store.getState()) {
+      subscription.notifyNestedSubs();
+    }
+    return () => {
+      subscription.tryUnsubscribe();
+      subscription.onStateChange = void 0;
+    };
+  }, [contextValue, previousState]);
+  const Context = context || ReactReduxContext;
+  return React4.createElement(Context.Provider, {
+    value: contextValue
+  }, children);
+}
+var Provider_default = Provider;
+
+// node_modules/react-redux/es/hooks/useStore.js
+function createStoreHook(context = ReactReduxContext) {
+  const useReduxContext2 = (
+    // @ts-ignore
+    context === ReactReduxContext ? useReduxContext : (
+      // @ts-ignore
+      createReduxContextHook(context)
+    )
+  );
+  return function useStore2() {
+    const {
+      store
+    } = useReduxContext2();
+    return store;
+  };
+}
+var useStore = createStoreHook();
+
+// node_modules/react-redux/es/hooks/useDispatch.js
+function createDispatchHook(context = ReactReduxContext) {
+  const useStore2 = (
+    // @ts-ignore
+    context === ReactReduxContext ? useStore : createStoreHook(context)
+  );
+  return function useDispatch2() {
+    const store = useStore2();
+    return store.dispatch;
+  };
+}
+var useDispatch = createDispatchHook();
+
+// node_modules/react-redux/es/index.js
+initializeUseSelector(import_with_selector.useSyncExternalStoreWithSelector);
+initializeConnect(import_shim.useSyncExternalStore);
+setBatch(import_react_dom.unstable_batchedUpdates);
+
+// node_modules/@reduxjs/toolkit/dist/query/react/rtk-query-react.esm.js
+var import_react4 = __toESM(require_react());
+var import_react5 = __toESM(require_react());
+var import_react6 = __toESM(require_react());
+var import_react7 = __toESM(require_react());
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
 var __spreadArray2 = function(to, from) {
   for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
     to[j] = from[i];
@@ -2394,14 +3462,23 @@ var __spreadProps2 = function(a, b) {
   return __defProps2(a, __getOwnPropDescs2(b));
 };
 function useStableQueryArgs(queryArgs, serialize, endpointDefinition, endpointName) {
+<<<<<<< HEAD
   var incoming = (0, import_react2.useMemo)(function() {
+=======
+  var incoming = (0, import_react4.useMemo)(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
     return {
       queryArgs,
       serialized: typeof queryArgs == "object" ? serialize({ queryArgs, endpointDefinition, endpointName }) : queryArgs
     };
   }, [queryArgs, serialize, endpointDefinition, endpointName]);
+<<<<<<< HEAD
   var cache22 = (0, import_react2.useRef)(incoming);
   (0, import_react2.useEffect)(function() {
+=======
+  var cache22 = (0, import_react4.useRef)(incoming);
+  (0, import_react4.useEffect)(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
     if (cache22.current.serialized !== incoming.serialized) {
       cache22.current = incoming;
     }
@@ -2410,8 +3487,13 @@ function useStableQueryArgs(queryArgs, serialize, endpointDefinition, endpointNa
 }
 var UNINITIALIZED_VALUE = Symbol();
 function useShallowStableValue(value) {
+<<<<<<< HEAD
   var cache22 = (0, import_react3.useRef)(value);
   (0, import_react3.useEffect)(function() {
+=======
+  var cache22 = (0, import_react5.useRef)(value);
+  (0, import_react5.useEffect)(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
     if (!shallowEqual(cache22.current, value)) {
       cache22.current = value;
     }
@@ -2439,7 +3521,11 @@ var defaultSerializeQueryArgs2 = function(_c) {
   }
   return endpointName + "(" + serialized + ")";
 };
+<<<<<<< HEAD
 var useIsomorphicLayoutEffect = typeof window !== "undefined" && !!window.document && !!window.document.createElement ? import_react.useLayoutEffect : import_react.useEffect;
+=======
+var useIsomorphicLayoutEffect2 = typeof window !== "undefined" && !!window.document && !!window.document.createElement ? import_react3.useLayoutEffect : import_react3.useEffect;
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
 var defaultMutationStateSelector = function(x) {
   return x;
 };
@@ -2455,10 +3541,17 @@ var noPendingQueryStateSelector = function(selected) {
   return selected;
 };
 function buildHooks(_c) {
+<<<<<<< HEAD
   var api = _c.api, _d = _c.moduleOptions, batch = _d.batch, useDispatch2 = _d.useDispatch, useSelector2 = _d.useSelector, useStore2 = _d.useStore, unstable__sideEffectsInRender = _d.unstable__sideEffectsInRender, serializeQueryArgs = _c.serializeQueryArgs, context = _c.context;
   var usePossiblyImmediateEffect = unstable__sideEffectsInRender ? function(cb) {
     return cb();
   } : import_react.useEffect;
+=======
+  var api = _c.api, _d = _c.moduleOptions, batch2 = _d.batch, useDispatch2 = _d.useDispatch, useSelector2 = _d.useSelector, useStore2 = _d.useStore, unstable__sideEffectsInRender = _d.unstable__sideEffectsInRender, serializeQueryArgs = _c.serializeQueryArgs, context = _c.context;
+  var usePossiblyImmediateEffect = unstable__sideEffectsInRender ? function(cb) {
+    return cb();
+  } : import_react3.useEffect;
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
   return { buildQueryHooks, buildMutationHook, usePrefetch };
   function queryStatePreSelector(currentState, lastResult, queryArgs) {
     if ((lastResult == null ? void 0 : lastResult.endpointName) && currentState.isUninitialized) {
@@ -2493,7 +3586,11 @@ function buildHooks(_c) {
   function usePrefetch(endpointName, defaultOptions) {
     var dispatch = useDispatch2();
     var stableDefaultOptions = useShallowStableValue(defaultOptions);
+<<<<<<< HEAD
     return (0, import_react.useCallback)(function(arg, options) {
+=======
+    return (0, import_react3.useCallback)(function(arg, options) {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
       return dispatch(api.util.prefetch(endpointName, arg, __spreadValues2(__spreadValues2({}, stableDefaultOptions), options)));
     }, [endpointName, dispatch, stableDefaultOptions]);
   }
@@ -2508,8 +3605,13 @@ function buildHooks(_c) {
         refetchOnFocus,
         pollingInterval
       });
+<<<<<<< HEAD
       var lastRenderHadSubscription = (0, import_react.useRef)(false);
       var promiseRef = (0, import_react.useRef)();
+=======
+      var lastRenderHadSubscription = (0, import_react3.useRef)(false);
+      var promiseRef = (0, import_react3.useRef)();
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
       var _g = promiseRef.current || {}, queryCacheKey = _g.queryCacheKey, requestId = _g.requestId;
       var currentRenderHasSubscription = false;
       if (queryCacheKey && requestId) {
@@ -2563,14 +3665,22 @@ function buildHooks(_c) {
         stableSubscriptionOptions,
         subscriptionRemoved
       ]);
+<<<<<<< HEAD
       (0, import_react.useEffect)(function() {
+=======
+      (0, import_react3.useEffect)(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
         return function() {
           var _a;
           (_a = promiseRef.current) == null ? void 0 : _a.unsubscribe();
           promiseRef.current = void 0;
         };
       }, []);
+<<<<<<< HEAD
       return (0, import_react.useMemo)(function() {
+=======
+      return (0, import_react3.useMemo)(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
         return {
           refetch: function() {
             var _a;
@@ -2585,8 +3695,13 @@ function buildHooks(_c) {
       var _d2 = _c2 === void 0 ? {} : _c2, refetchOnReconnect = _d2.refetchOnReconnect, refetchOnFocus = _d2.refetchOnFocus, _e = _d2.pollingInterval, pollingInterval = _e === void 0 ? 0 : _e;
       var initiate = api.endpoints[name].initiate;
       var dispatch = useDispatch2();
+<<<<<<< HEAD
       var _f = (0, import_react.useState)(UNINITIALIZED_VALUE), arg = _f[0], setArg = _f[1];
       var promiseRef = (0, import_react.useRef)();
+=======
+      var _f = (0, import_react3.useState)(UNINITIALIZED_VALUE), arg = _f[0], setArg = _f[1];
+      var promiseRef = (0, import_react3.useRef)();
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
       var stableSubscriptionOptions = useShallowStableValue({
         refetchOnReconnect,
         refetchOnFocus,
@@ -2599,16 +3714,28 @@ function buildHooks(_c) {
           (_b = promiseRef.current) == null ? void 0 : _b.updateSubscriptionOptions(stableSubscriptionOptions);
         }
       }, [stableSubscriptionOptions]);
+<<<<<<< HEAD
       var subscriptionOptionsRef = (0, import_react.useRef)(stableSubscriptionOptions);
       usePossiblyImmediateEffect(function() {
         subscriptionOptionsRef.current = stableSubscriptionOptions;
       }, [stableSubscriptionOptions]);
       var trigger = (0, import_react.useCallback)(function(arg2, preferCacheValue) {
+=======
+      var subscriptionOptionsRef = (0, import_react3.useRef)(stableSubscriptionOptions);
+      usePossiblyImmediateEffect(function() {
+        subscriptionOptionsRef.current = stableSubscriptionOptions;
+      }, [stableSubscriptionOptions]);
+      var trigger = (0, import_react3.useCallback)(function(arg2, preferCacheValue) {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
         if (preferCacheValue === void 0) {
           preferCacheValue = false;
         }
         var promise2;
+<<<<<<< HEAD
         batch(function() {
+=======
+        batch2(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
           var _a;
           (_a = promiseRef.current) == null ? void 0 : _a.unsubscribe();
           promiseRef.current = promise2 = dispatch(initiate(arg2, {
@@ -2619,18 +3746,30 @@ function buildHooks(_c) {
         });
         return promise2;
       }, [dispatch, initiate]);
+<<<<<<< HEAD
       (0, import_react.useEffect)(function() {
+=======
+      (0, import_react3.useEffect)(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
         return function() {
           var _a;
           (_a = promiseRef == null ? void 0 : promiseRef.current) == null ? void 0 : _a.unsubscribe();
         };
       }, []);
+<<<<<<< HEAD
       (0, import_react.useEffect)(function() {
+=======
+      (0, import_react3.useEffect)(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
         if (arg !== UNINITIALIZED_VALUE && !promiseRef.current) {
           trigger(arg, true);
         }
       }, [arg, trigger]);
+<<<<<<< HEAD
       return (0, import_react.useMemo)(function() {
+=======
+      return (0, import_react3.useMemo)(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
         return [trigger, arg];
       }, [trigger, arg]);
     };
@@ -2638,8 +3777,13 @@ function buildHooks(_c) {
       var _d2 = _c2 === void 0 ? {} : _c2, _e = _d2.skip, skip = _e === void 0 ? false : _e, selectFromResult = _d2.selectFromResult;
       var select = api.endpoints[name].select;
       var stableArg = useStableQueryArgs(skip ? skipToken : arg, serializeQueryArgs, context.endpointDefinitions[name], name);
+<<<<<<< HEAD
       var lastValue = (0, import_react.useRef)();
       var selectDefaultResult = (0, import_react.useMemo)(function() {
+=======
+      var lastValue = (0, import_react3.useRef)();
+      var selectDefaultResult = (0, import_react3.useMemo)(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
         return createSelector([
           select(stableArg),
           function(_, lastResult) {
@@ -2650,7 +3794,11 @@ function buildHooks(_c) {
           }
         ], queryStatePreSelector);
       }, [select, stableArg]);
+<<<<<<< HEAD
       var querySelector = (0, import_react.useMemo)(function() {
+=======
+      var querySelector = (0, import_react3.useMemo)(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
         return selectFromResult ? createSelector([selectDefaultResult], selectFromResult) : selectDefaultResult;
       }, [selectDefaultResult, selectFromResult]);
       var currentState = useSelector2(function(state) {
@@ -2658,7 +3806,11 @@ function buildHooks(_c) {
       }, shallowEqual);
       var store = useStore2();
       var newLastValue = selectDefaultResult(store.getState(), lastValue.current);
+<<<<<<< HEAD
       useIsomorphicLayoutEffect(function() {
+=======
+      useIsomorphicLayoutEffect2(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
         lastValue.current = newLastValue;
       }, [newLastValue]);
       return currentState;
@@ -2672,10 +3824,17 @@ function buildHooks(_c) {
         var queryStateResults = useQueryState(arg, __spreadProps2(__spreadValues2({}, options), {
           skip: arg === UNINITIALIZED_VALUE
         }));
+<<<<<<< HEAD
         var info = (0, import_react.useMemo)(function() {
           return { lastArg: arg };
         }, [arg]);
         return (0, import_react.useMemo)(function() {
+=======
+        var info = (0, import_react3.useMemo)(function() {
+          return { lastArg: arg };
+        }, [arg]);
+        return (0, import_react3.useMemo)(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
           return [trigger, queryStateResults, info];
         }, [trigger, queryStateResults, info]);
       },
@@ -2685,8 +3844,13 @@ function buildHooks(_c) {
           selectFromResult: arg === skipToken || (options == null ? void 0 : options.skip) ? void 0 : noPendingQueryStateSelector
         }, options));
         var data = queryStateResults.data, status = queryStateResults.status, isLoading = queryStateResults.isLoading, isSuccess = queryStateResults.isSuccess, isError = queryStateResults.isError, error = queryStateResults.error;
+<<<<<<< HEAD
         (0, import_react.useDebugValue)({ data, status, isLoading, isSuccess, isError, error });
         return (0, import_react.useMemo)(function() {
+=======
+        (0, import_react3.useDebugValue)({ data, status, isLoading, isSuccess, isError, error });
+        return (0, import_react3.useMemo)(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
           return __spreadValues2(__spreadValues2({}, queryStateResults), querySubscriptionResults);
         }, [queryStateResults, querySubscriptionResults]);
       }
@@ -2697,27 +3861,45 @@ function buildHooks(_c) {
       var _d2 = _c2 === void 0 ? {} : _c2, _e = _d2.selectFromResult, selectFromResult = _e === void 0 ? defaultMutationStateSelector : _e, fixedCacheKey = _d2.fixedCacheKey;
       var _f = api.endpoints[name], select = _f.select, initiate = _f.initiate;
       var dispatch = useDispatch2();
+<<<<<<< HEAD
       var _g = (0, import_react.useState)(), promise2 = _g[0], setPromise = _g[1];
       (0, import_react.useEffect)(function() {
+=======
+      var _g = (0, import_react3.useState)(), promise2 = _g[0], setPromise = _g[1];
+      (0, import_react3.useEffect)(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
         return function() {
           if (!(promise2 == null ? void 0 : promise2.arg.fixedCacheKey)) {
             promise2 == null ? void 0 : promise2.reset();
           }
         };
       }, [promise2]);
+<<<<<<< HEAD
       var triggerMutation = (0, import_react.useCallback)(function(arg) {
+=======
+      var triggerMutation = (0, import_react3.useCallback)(function(arg) {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
         var promise22 = dispatch(initiate(arg, { fixedCacheKey }));
         setPromise(promise22);
         return promise22;
       }, [dispatch, initiate, fixedCacheKey]);
       var requestId = (promise2 || {}).requestId;
+<<<<<<< HEAD
       var mutationSelector = (0, import_react.useMemo)(function() {
+=======
+      var mutationSelector = (0, import_react3.useMemo)(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
         return createSelector([select({ fixedCacheKey, requestId: promise2 == null ? void 0 : promise2.requestId })], selectFromResult);
       }, [select, promise2, selectFromResult, fixedCacheKey]);
       var currentState = useSelector2(mutationSelector, shallowEqual);
       var originalArgs = fixedCacheKey == null ? promise2 == null ? void 0 : promise2.arg.originalArgs : void 0;
+<<<<<<< HEAD
       var reset = (0, import_react.useCallback)(function() {
         batch(function() {
+=======
+      var reset = (0, import_react3.useCallback)(function() {
+        batch2(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
           if (promise2) {
             setPromise(void 0);
           }
@@ -2730,7 +3912,11 @@ function buildHooks(_c) {
         });
       }, [dispatch, fixedCacheKey, promise2, requestId]);
       var endpointName = currentState.endpointName, data = currentState.data, status = currentState.status, isLoading = currentState.isLoading, isSuccess = currentState.isSuccess, isError = currentState.isError, error = currentState.error;
+<<<<<<< HEAD
       (0, import_react.useDebugValue)({
+=======
+      (0, import_react3.useDebugValue)({
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
         endpointName,
         data,
         status,
@@ -2739,10 +3925,17 @@ function buildHooks(_c) {
         isError,
         error
       });
+<<<<<<< HEAD
       var finalState = (0, import_react.useMemo)(function() {
         return __spreadProps2(__spreadValues2({}, currentState), { originalArgs, reset });
       }, [currentState, originalArgs, reset]);
       return (0, import_react.useMemo)(function() {
+=======
+      var finalState = (0, import_react3.useMemo)(function() {
+        return __spreadProps2(__spreadValues2({}, currentState), { originalArgs, reset });
+      }, [currentState, originalArgs, reset]);
+      return (0, import_react3.useMemo)(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
         return [triggerMutation, finalState];
       }, [triggerMutation, finalState]);
     };
@@ -2771,7 +3964,11 @@ function safeAssign2(target) {
 }
 var reactHooksModuleName = Symbol();
 var reactHooksModule = function(_c) {
+<<<<<<< HEAD
   var _d = _c === void 0 ? {} : _c, _e = _d.batch, batch = _e === void 0 ? import_react_dom.unstable_batchedUpdates : _e, _f = _d.useDispatch, useDispatch2 = _f === void 0 ? useDispatch : _f, _g = _d.useSelector, useSelector2 = _g === void 0 ? useSelector : _g, _h = _d.useStore, useStore2 = _h === void 0 ? useStore : _h, _j = _d.unstable__sideEffectsInRender, unstable__sideEffectsInRender = _j === void 0 ? false : _j;
+=======
+  var _d = _c === void 0 ? {} : _c, _e = _d.batch, batch2 = _e === void 0 ? import_react_dom.unstable_batchedUpdates : _e, _f = _d.useDispatch, useDispatch2 = _f === void 0 ? useDispatch : _f, _g = _d.useSelector, useSelector2 = _g === void 0 ? useSelector : _g, _h = _d.useStore, useStore2 = _h === void 0 ? useStore : _h, _j = _d.unstable__sideEffectsInRender, unstable__sideEffectsInRender = _j === void 0 ? false : _j;
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
   return {
     name: reactHooksModuleName,
     init: function(api, _c2, context) {
@@ -2780,7 +3977,11 @@ var reactHooksModule = function(_c) {
       var _d2 = buildHooks({
         api,
         moduleOptions: {
+<<<<<<< HEAD
           batch,
+=======
+          batch: batch2,
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
           useDispatch: useDispatch2,
           useSelector: useSelector2,
           useStore: useStore2,
@@ -2790,7 +3991,11 @@ var reactHooksModule = function(_c) {
         context
       }), buildQueryHooks = _d2.buildQueryHooks, buildMutationHook = _d2.buildMutationHook, usePrefetch = _d2.usePrefetch;
       safeAssign2(anyApi, { usePrefetch });
+<<<<<<< HEAD
       safeAssign2(context, { batch });
+=======
+      safeAssign2(context, { batch: batch2 });
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
       return {
         injectEndpoint: function(endpointName, definition) {
           if (isQueryDefinition2(definition)) {
@@ -2817,7 +4022,11 @@ var reactHooksModule = function(_c) {
   };
 };
 function ApiProvider(props) {
+<<<<<<< HEAD
   var store = import_react5.default.useState(function() {
+=======
+  var store = import_react7.default.useState(function() {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
     var _c;
     return configureStore({
       reducer: (_c = {}, _c[props.api.reducerPath] = props.api.reducer, _c),
@@ -2826,10 +4035,17 @@ function ApiProvider(props) {
       }
     });
   })[0];
+<<<<<<< HEAD
   (0, import_react4.useEffect)(function() {
     return props.setupListeners === false ? void 0 : setupListeners(store.dispatch, props.setupListeners);
   }, [props.setupListeners, store.dispatch]);
   return import_react5.default.createElement(Provider_default, {
+=======
+  (0, import_react6.useEffect)(function() {
+    return props.setupListeners === false ? void 0 : setupListeners(store.dispatch, props.setupListeners);
+  }, [props.setupListeners, store.dispatch]);
+  return import_react7.default.createElement(Provider_default, {
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
     store,
     context: props.context
   }, props.children);
@@ -2851,4 +4067,52 @@ export {
   skipSelector,
   skipToken
 };
+<<<<<<< HEAD
+=======
+/*! Bundled license information:
+
+use-sync-external-store/cjs/use-sync-external-store-shim.development.js:
+  (**
+   * @license React
+   * use-sync-external-store-shim.development.js
+   *
+   * Copyright (c) Facebook, Inc. and its affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   *)
+
+use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js:
+  (**
+   * @license React
+   * use-sync-external-store-shim/with-selector.development.js
+   *
+   * Copyright (c) Facebook, Inc. and its affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   *)
+
+react-is/cjs/react-is.development.js:
+  (** @license React v16.13.1
+   * react-is.development.js
+   *
+   * Copyright (c) Facebook, Inc. and its affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   *)
+
+react-is/cjs/react-is.development.js:
+  (**
+   * @license React
+   * react-is.development.js
+   *
+   * Copyright (c) Facebook, Inc. and its affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   *)
+*/
+>>>>>>> 075c54bc5bc79032a3c6557853d85b0ed9465211
 //# sourceMappingURL=@reduxjs_toolkit_query_react.js.map
