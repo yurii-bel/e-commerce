@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 interface SummaryProps {
   isOpen: boolean;
@@ -6,8 +6,6 @@ interface SummaryProps {
 }
 
 const Summary: React.FC<SummaryProps> = ({ isOpen, handleClose }) => {
-  //   const [show, setShow] = useState(isOpen);
-
   const handleCloseDrawer = () => {
     handleClose();
   };

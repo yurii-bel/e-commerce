@@ -11,7 +11,6 @@ const Navbar: React.FC = () => {
     <>
       <nav className="z-99 sticky top-0 py-2 backdrop-blur-sm bg-black/80">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          {/* <div className="text-white font-semibold text-lg pl-4">e-commerce</div> */}
           <ul className="flex justify-center items-center space-x-4 pr-4">
             <li>
               <NavLink
@@ -54,9 +53,6 @@ const Navbar: React.FC = () => {
             </span>
           </button>
         </div>
-        {/* {drawerOpen && (
-          <Drawer isOpen={drawerOpen} toggleDrawer={toggleDrawer} />
-        )} */}
       </nav>
       <Summary isOpen={drawerOpen} handleClose={toggleDrawer} />
     </>

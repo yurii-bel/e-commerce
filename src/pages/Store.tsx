@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { useAppSelector } from "../app/hooks";
 
 import {
   Product,
@@ -9,9 +9,6 @@ import ProductItem from "../components/ProductItem";
 import { RootState } from "../app/store";
 
 const Store: React.FC = () => {
-  const counter = useAppSelector((state: RootState) => state.counter.value);
-  const dispath = useAppDispatch();
-
   const cartItems = useAppSelector((state: RootState) => state.cart);
   useEffect(() => {
     console.log(cartItems);

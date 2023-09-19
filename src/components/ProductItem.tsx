@@ -1,12 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Product } from "../features/products/productsSlice";
 import { Button } from "@material-tailwind/react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import {
-  addItemToCart,
-  removeItemFromCart,
-  clearCart,
-} from "../features/cart/cartProductsSlice";
+import { addItemToCart } from "../features/cart/cartProductsSlice";
 import { RootState } from "../app/store";
 import { cartItem } from "../features/cart/cartProductsSlice";
 
@@ -16,7 +12,6 @@ interface ProductItemProps {
 
 const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
   const dispatch = useAppDispatch();
-  const cartItems = useAppSelector((state: RootState) => state.cart);
 
   const handleAddToCart = (product: Product) => {
     const cartItemToAdd: cartItem = {
