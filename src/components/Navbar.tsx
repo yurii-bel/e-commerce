@@ -4,13 +4,14 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import Summary from "./Summary";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { RootState } from "../app/store";
+import { cartItem } from "../features/cart/cartProductsSlice";
 
 const Navbar: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const toggleDrawer = () => setDrawerOpen((prev) => !prev);
 
-  // const dispatch = useAppDispatch();
   const cartItems = useAppSelector((state: RootState) => state.cart);
+
   const totalItems = cartItems.reduce((acc, item) => item.quantity + acc, 0);
 
   return (
@@ -60,9 +61,6 @@ const Navbar: React.FC = () => {
             </span>
           </button>
         </div>
-        {/* {drawerOpen && (
-          <Drawer isOpen={drawerOpen} toggleDrawer={toggleDrawer} />
-        )} */}
       </nav>
       <Summary isOpen={drawerOpen} handleClose={toggleDrawer} />
     </>

@@ -74,7 +74,7 @@ const SummaryItem: React.FC<ItemProps> = ({ item }) => {
         <p className="w-96 text-xs leading-3 text-gray-600 py-4">
           <span className="font-bold">Category: </span> {item.category}
         </p>
-        <p className="flex items-center gap-1 w-96 text-xs leading-3 text-gray-600">
+        <div className="flex items-center gap-1 w-96 text-xs leading-3 text-gray-600">
           <span className="font-bold">Quantity: </span>
           <div className="flex items-center gap-1">
             <button
@@ -91,7 +91,7 @@ const SummaryItem: React.FC<ItemProps> = ({ item }) => {
               +
             </button>
           </div>
-        </p>
+        </div>
         <div className="flex items-center justify-between pt-5 pr-6">
           <div className="flex itemms-center">
             <p className="text-xs leading-3 underline text-gray-800 cursor-pointer">
