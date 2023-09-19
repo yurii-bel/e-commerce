@@ -24,14 +24,15 @@ const Home: React.FC = () => {
         // }}
       >
         {/* <div className="z-1 mix-blend-overlay absolute bg-cover inset-0 bg-[url('/home-bg.jpg')] opacity-90"></div> */}
-        <div className="bg-blend-overlay mx-auto h-full flex justify-center items-center bg-cover bg-[url('/dark-bg.jpg')] ">
-          <div className="text-center text-slate-200">
+        <div className="mx-auto h-full flex justify-center items-center bg-gradient-to-r from-sky-900 to-indigo-300 md:bg-cover md:bg-[url('/e4.jpg')] md:bg-transparent">
+          <div className="text-center bg-black/30 p-2 rounded-md text-slate-100">
             <h2 className="text-xl font-semibold md:text-4xl ">
               Explore the World of E-commerce
             </h2>
-            <p className="text-md text-blue-200 bg-slate-900 md:text-xl mt-4">
+            <p className="text-md text-blue-200 bg-slate-900 px-1 rounded-sm md:text-xl mt-4">
               Find the latest products at unbeatable prices.
             </p>
+
             <Link
               to="/store"
               className="mt-6 inline-block bg-slate-700 text-white py-3 px-6 rounded-md hover:bg-slate-900 transition duration-300"

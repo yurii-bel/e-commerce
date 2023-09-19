@@ -4,7 +4,6 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import Summary from "./Summary";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { RootState } from "../app/store";
-import { useLocalStorage } from "../hooks/useLocalStorage";
 import { cartItem } from "../features/cart/cartProductsSlice";
 
 const Navbar: React.FC = () => {

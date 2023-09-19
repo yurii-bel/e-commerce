@@ -38,7 +38,3 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-blue-700;
 }
-
-body {
-  @apply font-custom;
-}
