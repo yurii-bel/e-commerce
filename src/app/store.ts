@@ -1,4 +1,5 @@
 import { Middleware, configureStore } from "@reduxjs/toolkit";
+import couterReducer from "../features/counter/counterSlice";
 import { apiSlice } from "../features/products/productsSlice";
 import cartReducer from "../features/cart/cartProductsSlice";
 import { localStorageMiddleware } from "../features/middleware/local-storage-middleware";
@@ -12,6 +13,7 @@ const preloadedState = savedStateJSON ? JSON.parse(savedStateJSON) : undefined;
 
 export const store = configureStore({
   reducer: {
+    counter: couterReducer,
     cart: cartReducer,
     [apiSlice.reducerPath]: apiSlice.reducer,
   },
