@@ -1,8 +1,7 @@
 import React from "react";
 import SummaryItem from "./SummaryItem";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { useAppSelector } from "../app/hooks";
 import { RootState } from "../app/store";
-import { removeItemFromCart } from "../features/cart/cartProductsSlice";
 
 const SummaryList: React.FC = () => {
   // const dispatch = useAppDispatch();

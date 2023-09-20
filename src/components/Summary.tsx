@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import SummaryList from "./SummaryList";
 import { formatCurrency } from "../utils/formatCurrency";
