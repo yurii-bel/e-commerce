@@ -1,27 +1,30 @@
-# React + TypeScript + Vite
+# eCommerce Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to our eCommerce project built with React, Tailwind CSS, TypeScript, and Redux Toolkit with RTK Query.
+[Demo Link](https://ecommerce-app-chi-bay.vercel.app/)
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse a wide selection of products.
+- Add products to your shopping cart.
+- Apply filters for quick product searches.
+- Enjoy a seamless shopping experience.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: The project is built using the React library for creating user interfaces.
 
-- Configure the top-level `parserOptions` property like this:
+- **Tailwind CSS**: Tailwind CSS is used for styling, providing a modern and responsive design.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- **Redux Toolkit**: Redux Toolkit simplifies state management in React applications, making it easier to manage global application state.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **RTK Query**: RTK Query is used for efficient data fetching and caching.
+
+- **TypeScript**: TypeScript is used for type-safe development, ensuring fewer runtime errors.
+
+## Getting Started
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/eCommerce-project.git
