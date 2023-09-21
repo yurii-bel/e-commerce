@@ -1,6 +1,6 @@
 # eCommerce Project
 
-Welcome to our eCommerce project built with React, Tailwind CSS, TypeScript, and Redux Toolkit with RTK Query.
+Welcome to my eCommerce project built with React (Vite), Tailwind CSS, TypeScript, and Redux Toolkit with RTK Query.
 [Demo Link](https://ecommerce-app-chi-bay.vercel.app/)
 
 ## Features
@@ -13,6 +13,8 @@ Welcome to our eCommerce project built with React, Tailwind CSS, TypeScript, and
 ## Technologies Used
 
 - **React**: The project is built using the React library for creating user interfaces.
+  
+- **Vite**: Vite is used as the build tool for this project, offering fast development and optimized production builds.
 
 - **Tailwind CSS**: Tailwind CSS is used for styling, providing a modern and responsive design.
 
